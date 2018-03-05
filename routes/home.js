@@ -6,7 +6,7 @@ module.exports = function ( app ) {
                 res.render('home',{Commoditys:docs});
             });
         }else{
-            req.session.error = "请先登录"
+            req.session.error = "請先登錄"
             res.redirect('/login');
         }
     });

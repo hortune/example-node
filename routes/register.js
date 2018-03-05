@@ -9,10 +9,10 @@ module.exports = function ( app ) {
         User.findOne({name: uname}, function (error, doc) {
             if (error) {
                 res.send(500);
-                req.session.error = '网络异常错误！';
+                req.session.error = '網路異常錯誤！';
                 console.log(error);
             } else if (doc) {
-                req.session.error = '用户名已存在！';
+                req.session.error = '用戶名已存在！';
                 res.send(500);
             } else {
                 User.create({
@@ -23,7 +23,7 @@ module.exports = function ( app ) {
                         res.send(500);
                         console.log(error);
                     } else {
-                        req.session.error = '用户名创建成功！';
+                        req.session.error = '用戶名創建成功！';
                         res.send(200);
                     }
                 });
