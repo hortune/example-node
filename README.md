@@ -23,12 +23,16 @@ http://0.0.0.0:3000
 
 ## TODO 
 - Support custom ticket
-- admin permission settings?
 - Scoreboard
 - Flow Control
 - On Sale in limited time only
+- Add Score Column
+
+## BUG
+- 購物車太長跑版
 
 ## Feature
 - Delete Item
 - Traditional Chinese
 - Image url Support
+- admin permission for adding and deleting
