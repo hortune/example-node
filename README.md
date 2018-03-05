@@ -21,6 +21,7 @@ http://0.0.0.0:3000
 
 
 ## TODO 
+- Support custom ticket
 - Add backdoor for admin?
 - Scoreboard
 - Flow Control
