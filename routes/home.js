@@ -27,4 +27,21 @@ module.exports = function ( app ) {
             }
         });
     });
+    
+    
+    app.get('/deletecommodity', function(req, res) {
+        res.render('deletecommodity');
+    });
+    app.post('/deletecommodity', function (req, res) {
+        var Commodity = global.dbHelper.getModel('commodity');
+        Commodity.remove({
+            name: req.body.name,
+        }, function (error, doc) {
+            if (doc) {
+                res.send(200);
+            }else{
+                res.send(404);
+            }
+        });
+    });
 }
