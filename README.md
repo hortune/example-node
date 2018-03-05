@@ -21,7 +21,8 @@ http://0.0.0.0:3000
 
 
 ## TODO 
-    [ ] Traditional Chinese
-    [ ] Scoreboard
-    [ ] Flow Control
+- Traditional Chinese
+- Scoreboard
+- Flow Control
+- On Sale in limited time only
 
