@@ -1,23 +1,27 @@
-# example-node
-一个简单的电商网站demo，使用了nodejs, express, mongodb, mongoose等功能模块。
+# sprout-ticket (forked from example-node)
+簡單的購物網站，以nodejs, express, mongodb, mongoose建構而成。
 
-实现功能：
-
-1. 注册
+## Function
+1. Register
  
-2. 登录
+2. Login
 
-3. 添加商品
+3. Add Item
 
-4. 加入购物车和结算
+4. Add to shopcart
 
-欢迎到[汇智网](http://www.hubwiz.com)学习[《node.js实战》](http://www.hubwiz.com/course/549a704f88dba0136c371703/)课程。
 
-使用说明：
+## Start
 
-1. 启动mongodb；
+1. Setup mongodb (easy for docker)
 
-2. 启动项目: 在命令行窗口 cd 到项目目录，输入: node app.js
+2. `node app.js`
 
-然后就可以通过 http://localhost:3000 访问了。
+http://0.0.0.0:3000
+
+
+## TODO 
+[ ] Traditional Chinese
+[ ] Scoreboard
+[ ] Flow Control
 
