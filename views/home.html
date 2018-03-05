@@ -44,7 +44,13 @@
                 <%for(var i in Commoditys){ if(!Commoditys[i].name)continue;%>
                     <li class="spys li">
                         <div >
-                            <img width="80" height="100"  src="/images/<%=Commoditys[i].imgSrc%>">
+                            <%  if(!Commoditys[i].imgSrc){ %>
+                            <img width="100" height="100"  src="">
+                            <% } else if( Commoditys[i].imgSrc.substring(0,4)=="http"){ %>
+                            <img width="100" height="100"  src="<%=Commoditys[i].imgSrc%>">
+                            <% } else { %>
+                            <img width="100" height="100"  src="/images/<%=Commoditys[i].imgSrc%>">
+                            <%}%>
                         </div>
                         <div >
                             <a ><%=Commoditys[i].name%></a>
