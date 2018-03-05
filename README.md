@@ -21,7 +21,7 @@ http://0.0.0.0:3000
 
 
 ## TODO 
-- Traditional Chinese
+- Add backdoor for admin?
 - Scoreboard
 - Flow Control
 - On Sale in limited time only
