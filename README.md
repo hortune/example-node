@@ -23,7 +23,7 @@ http://0.0.0.0:3000
 
 ## TODO 
 - Support custom ticket
-- Add backdoor for admin?
+- admin permission settings?
 - Scoreboard
 - Flow Control
 - On Sale in limited time only
