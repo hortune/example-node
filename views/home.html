@@ -23,7 +23,6 @@
             .spys li div strong{
                 color: red;
             }
-
 		</style>
   </head>
 <body>
@@ -53,9 +52,13 @@
                             <img width="100" height="100"  src="/images/<%=Commoditys[i].imgSrc%>">
                             <%}%>
                         </div>
-                        <div >
-                            <a ><%=Commoditys[i].name%></a>
-                            <strong style="color:red;" >￥<%=Commoditys[i].price%></strong>
+                        <div>
+                            <strong style="color:green;"><%=Commoditys[i].name%></strong>
+                            <br>
+                            <strong style="color:red;" >￥<%=Commoditys[i].score%></strong>
+                        </div>
+                        <div>
+                            <strong style="color:gray;" >剩<%=Commoditys[i].amount%>個</strong>
                         </div>
                         <div >
                             <a class="btn btn-success" style="width: 120px;"  href="/addToCart/<%=Commoditys[i]._id%>">加入購物車</a>

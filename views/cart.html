@@ -25,7 +25,6 @@
                 self.siblings('input').val(num);
                 tamount();
             });
-
             //checkbox 单选事件
             $('input[name="chkItem"]:checkbox').click(function(){
                 var isCheck = $('input[name="chkItem"]:not(:checked)').length?false:true;
@@ -72,10 +71,10 @@
             sum = 0;
             $('input[name="chkItem"]:checked').each(function(){
                 var self = $(this),
-                    price = self.attr('data-price'),
+                    score = self.attr('data-score'),
                     index = self.attr('data-index');
                 var quantity = $('#Q'+index).val();
-                sum +=(parseFloat(price)*parseFloat(quantity));
+                sum +=(parseFloat(score)*parseFloat(quantity));
             });
             $("#money").html('￥'+ sum +'.00');
         }
@@ -108,7 +107,7 @@
             margin: 20px 0 0 30px;
             width: 280px;
         }
-        .li-price{
+        .li-score{
             margin: 20px 0 0 60px;
             width: 100px;
         }
@@ -143,7 +142,7 @@
                         <input id="CheckAll"  type="checkbox" > 全選
                     </span>
                     <span style="margin-right: 180px;">商品</span>
-                    <span style="margin-right: 210px;">價格</span>
+                    <span style="margin-right: 210px;">分數</span>
                     <span style="margin-right: 80px;">數量</span>
                     <span style="padding-right: 0px;">操作</span>
                 </div>
@@ -153,24 +152,36 @@
                     <%for(var i in carts){ if(!carts[i].cId)continue%>
                     <li >
                         <div class="li-checkbox">
-                            <input data-id="<%=carts[i]._id%>" data-index="<%=i%>"  data-price="<%=carts[i].cPrice%>"
+                            <input data-id="<%=carts[i]._id%>" data-index="<%=i%>"  data-score="<%=carts[i].cScore%>"
                                    name="chkItem"  class="li-checkbox input" type="checkbox" />
                         </div>
                         <div class="li-img">
                             <a >
-                                <img class="li-img a img" src="/images/<%=carts[i].cImgSrc%>">
+                            <%  if(!carts[i].cImgSrc){ %>
+                            <img class="li-img a img"  src="">
+                            <% } else if( carts[i].cImgSrc.substring(0,4)=="http"){ %>
+                            <img class="li-img a img"  src="<%=carts[i].cImgSrc%>">
+                            <% } else { %>
+                            <img class="li-img a img" src="/images/<%=carts[i].cImgSrc%>">
+                            <%}%>
                             </a>
                         </div>
                         <div class="li-content">
                             <a ><%=carts[i].cName%></a>
                         </div>
-                        <div class="li-price" >
-                            <span><%=carts[i].cPrice%></span>
+                        <div class="li-score" >
+                            <span><%=carts[i].cScore%></span>
                         </div>
                         <div class="li-quantity">
                             <a data-type="add" href="javascript:void(0);" class="btn btn-default btn-xs ">+</a>
                             <input id="Q<%=i%>" style="width: 40px;"  type="text"  value="<%=carts[i].cQuantity%>">
                             <a data-type='subtr' href="javascript:void(0);" class="btn btn-default btn-xs">-</a>
+                            
+                            <!--
+                            <a id="Q<%=i%>" style="width: 40px;"  type="text"  value="1">
+                            1
+                            </a>
+                            -->
                         </div>
                         <div class="li-del" >
                             <a href="/delFromCart/<%=carts[i]._id%>" class="btn btn-primary btn-xs">删除</a>

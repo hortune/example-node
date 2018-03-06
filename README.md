@@ -24,15 +24,17 @@ http://0.0.0.0:3000
 ## TODO 
 - Support custom ticket
 - Scoreboard
-- Flow Control
 - On Sale in limited time only
 - Add Score Column
+- cut amount
 
 ## BUG
 - 購物車太長跑版
+- Logic error for buying
 
 ## Feature
 - Delete Item
 - Traditional Chinese
 - Image url Support
 - admin permission for adding and deleting
+- Support limited resource and buy item history

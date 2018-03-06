@@ -11,8 +11,8 @@
     </style>
     <script type="text/javascript">
         function addcommodity(){
-                var name = $('#cname').val(), price = $('#cprice').val(), imgSrc = $('#imgPath').val();
-                var data = { "name": name, price:price,"imgSrc": imgSrc};
+                var name = $('#cname').val(), score = $('#cScore').val(), imgSrc = $('#imgPath').val(), amount = $('#amount').val();
+                var data = { "name": name, score:score,"imgSrc": imgSrc, amount:amount};
                 $.ajax({
                     url:'/addcommodity',
                     type:'POST',
@@ -35,8 +35,9 @@
     <a class="btn  btn-xs btn-success" href="home" style="margin-left: 400px;">返回商品頁</a>
     <form action="#"  role="form" method="post" >
         <input style="margin-top: 30px;" id="cname" type="text" class="form-control"  name="cname" placeholder="商品名稱" />
-        <input style="margin-top: 30px;" id="cprice"  class="form-control" name="cprice"  placeholder="商品價格" />
+        <input style="margin-top: 30px;" id="cScore"  class="form-control" name="cScore"  placeholder="商品分數" />
         <input style="margin-top: 30px;" id="imgPath" type="text" class="form-control" name="imgPath" placeholder="圖片網址">
+        <input style="margin-top: 30px;" id="amount"  class="form-control" name="amount"  placeholder="商品數量" />
         <input style="margin-top: 30px;" type="button" class="btn btn-success btn-block" onclick="addcommodity()" value="添 加" />
     </form>
 </div>

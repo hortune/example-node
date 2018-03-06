@@ -9,7 +9,7 @@ var session = require('express-session');
 
 global.dbHelper = require( './common/dbHelper' );
 
-global.db = mongoose.connect("mongodb://127.0.0.1:27017/test1");
+global.db = mongoose.connect("mongodb://127.0.0.1:27017/test2");
 
 app.use(session({
     secret:'secret',
@@ -50,5 +50,3 @@ app.get('/', function(req, res) {
 });
 
 app.listen(3000);
-
-

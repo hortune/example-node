@@ -11,37 +11,59 @@ module.exports = function ( app ) {
         }
     });
     app.get('/addcommodity', function(req, res) {
-        res.render('addcommodity');
+        if(req.session.user["name"] == "admin"){
+            res.render('addcommodity');
+        }
+        else{
+            res.redirect("/home");
+        }
     });
     app.post('/addcommodity', function (req, res) {
-        var Commodity = global.dbHelper.getModel('commodity');
-        Commodity.create({
-            name: req.body.name,
-            price: req.body.price,
-            imgSrc: req.body.imgSrc
-        }, function (error, doc) {
-            if (doc) {
-                res.send(200);
-            }else{
-                res.send(404);
-            }
-        });
+
+        if(req.session.user["name"] == "admin"){
+            var Commodity = global.dbHelper.getModel('commodity');
+            Commodity.create({
+                name: req.body.name,
+                score: req.body.score,
+                imgSrc: req.body.imgSrc,
+                amount: req.body.amount
+            }, function (error, doc) {
+                if (doc) {
+                    res.send(200);
+                }else{
+                    res.send(404);
+                }
+            });
+        }
+        else{
+            res.send(404);
+        }
     });
     
     
     app.get('/deletecommodity', function(req, res) {
-        res.render('deletecommodity');
+        if(req.session.user["name"] == "admin"){
+            res.render('deletecommodity');
+        }
+        else{
+            res.redirect('/home');
+        }
     });
     app.post('/deletecommodity', function (req, res) {
-        var Commodity = global.dbHelper.getModel('commodity');
-        Commodity.remove({
-            name: req.body.name,
-        }, function (error, doc) {
-            if (doc) {
-                res.send(200);
-            }else{
-                res.send(404);
-            }
-        });
+        if(req.session.user["name"] == "admin"){
+            var Commodity = global.dbHelper.getModel('commodity');
+            Commodity.remove({
+                name: req.body.name,
+            }, function (error, doc) {
+                if (doc) {
+                    res.send(200);
+                }else{
+                    res.send(404);
+                }
+            });
+        }
+        else{
+            res.send(404);
+        }
     });
 }
